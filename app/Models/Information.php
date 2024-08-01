@@ -10,8 +10,14 @@ class Information extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'kategori_id',
         'judul',
         'konten',
         'img'
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
 }

@@ -74,6 +74,10 @@ Route::middleware('auth')->prefix('admin')->group(function() {
         Route::get('/profile/{id}', 'index')->name('main.profile');
         Route::get('logout', 'logout');
     });
+
+    Route::controller(Main\KategoriController::class)->group(function() {
+        Route::get('/kategori', 'index')->name('main.kategori');
+    });
     //route for diskusi
     // Route::controller(Main\TopikController::class)->group(function() {
     //     Route::get('/topik', 'index')->name('main.topik');

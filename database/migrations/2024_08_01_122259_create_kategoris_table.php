@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('information', function (Blueprint $table) {
+        Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('kategori_id');
-            $table->string('judul');
-            $table->text('konten');
-            $table->string('img')->default('informasi.jpg');
+            $table->string('nama_kategori');
+            $table->string('slug');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('information');
+        Schema::dropIfExists('kategoris');
     }
 };

@@ -65,8 +65,8 @@
                   <input
                     type="text"
                     class="form-control border-0 shadow-none"
-                    placeholder="Cari topik diskusi"
-                    aria-label="Cari topik diskusi"
+                    placeholder="Car informasi"
+                    aria-label="Car informasi"
                   />
                 </div>
               </div>
