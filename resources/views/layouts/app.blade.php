@@ -92,7 +92,7 @@
                     <a href="#" target="_blank" class="footer-link fw-bolder">Mega</a>
                   </div>
                   <div>
-                    <a href="#" class="footer-link me-4" target="_blank">Kontak kami: <i class='bx bxl-whatsapp'></i> 0857414920xx</a>
+                    <a href="#" class="footer-link me-4" target="_blank">Kontak kami: <i class='bx bxl-whatsapp'></i> 082289715149</a>
                   </div>
                 </div>
               </footer>

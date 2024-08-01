@@ -15,7 +15,11 @@
             <p class="card-text">
               <div>{!! $item->konten !!}</div>
             </p>
-            <a href="/admin/diskusi/show/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka diskusi</a>
+            <form action="/admin/diskusi/destroy/{{ $item->id }}" method="POST">
+              <a href="/admin/diskusi/show/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka diskusi</a>
+                @csrf
+                <button class="btn btn-outline-danger" onclick="return confirm('Yakin hapus topik ini?')">Hapus</button>
+              </form>
           </div>
         </div>
       </div>

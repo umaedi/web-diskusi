@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Artisan;
 //route for auth
 Route::middleware('guest')->group(function() {
     Route::get('/login', [Auth\LoginController::class, 'index'])->name('login');
@@ -77,6 +77,11 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 
     Route::controller(Main\KategoriController::class)->group(function() {
         Route::get('/kategori', 'index')->name('main.kategori');
+        Route::get('/kategori/create', 'create')->name('main.kategori.create');
+        Route::post('/kategori/store', 'store')->name('main.kategori.store');
+        Route::get('/kategori/show/{id}', 'show');
+        Route::post('/kategori/update/{id}', 'update');
+        Route::get('/kategori/delete/{id}', 'delete');
     });
     //route for diskusi
     // Route::controller(Main\TopikController::class)->group(function() {
@@ -84,5 +89,12 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     //     Route::get('/topik/create', 'create')->name('main.topik.create');
     //     Route::post('/topik/store', 'store')->name('main.topik.create');
     // });
+});
+
+Route::get('/migrate', function() {
+    Artisan::call('migrate:fresh', [
+        '--seed' => true,
+    ]);
+    return \redirect('/');
 });
 

@@ -112,7 +112,7 @@
                     href="#"
                     target="_blank"
                     class="footer-link me-4"
-                    >Kontak: 085741492045</a
+                    >Kontak: 082289715149</a
                   >
                 </div>
               </div>

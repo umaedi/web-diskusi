@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nim');
             $table->string('nama_mahasiswa');
             $table->string('email');
-            $table->string('img')->default('forum.jpg');
+            $table->string('img')->default('forum/forum.jpg');
             $table->timestamps();
         });
     }

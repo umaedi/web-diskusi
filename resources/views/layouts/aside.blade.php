@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-      <a href="index.html" class="app-brand-link">
+      <a href="/admin/dashboard" class="app-brand-link">
         <span class="app-brand-logo demo">
           <img src="{{ asset('img/logo/rsud.png') }}" alt="">
         </span>
@@ -44,12 +44,12 @@
           </a>
       </li>
       @if (auth()->user()->role == 'admin')
-      <li class="menu-item {{ Request::is('admin/operator*') ? 'active' : ''}}">
+      {{-- <li class="menu-item {{ Request::is('admin/operator*') ? 'active' : ''}}">
           <a href="{{ route('main.operator') }}" class="menu-link">
             <i class="menu-icon bx bx-user"></i>
             <div data-i18n="Basic">Operator</div>
           </a>
-      </li>
+      </li> --}}
       @endif
       <li class="menu-item">
         <a href="/admin/logout" class="menu-link">

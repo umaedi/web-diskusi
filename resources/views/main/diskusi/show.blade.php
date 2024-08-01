@@ -3,7 +3,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
       <div class="col-lg-6 mb-4 order-0">
-        <h5 class="fw-bold"><i class='bx bxs-bookmark-minus'></i> Informasi penelitian & pendidikan</h5>
+        <h5 class="fw-bold"><i class='bx bxs-bookmark-minus'></i> Topik diskusi</h5>
         <div class="card mb-4">
             <div class="card-body">
                 <img src="{{ asset('storage/' . $diskusi->img ) }}" width="100%" alt="" class="">

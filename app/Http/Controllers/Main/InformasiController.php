@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Information;
+use App\Models\Kategori;
 use App\Models\Comment;
 class InformasiController extends Controller
 {
@@ -17,9 +18,9 @@ class InformasiController extends Controller
 
     public function create()
     {
-        return view('main.informasi.create', [
-            'title' => 'Buat informasi diskusi'
-        ]);
+        $data['kategori'] = Kategori::all();
+        $data['title'] = 'Buat informasi diskusi';
+        return view('main.informasi.create',$data);
     }
 
     public function store(Request $request)
@@ -37,6 +38,7 @@ class InformasiController extends Controller
 
         Information::create([
             'user_id'   => Auth::user()->id,
+            'kategori_id'  => $request->kategori_id,
             'judul' => $request->judul,
             'konten'    => $request->konten,
             'img'   => $imgName
@@ -57,6 +59,7 @@ class InformasiController extends Controller
     {
         $data['title']  = "Edit informasi";
         $data['informasi'] = Information::find($id);
+        $data['kategori'] = Kategori::all();
         return view('main.informasi.edit',$data);
     }
 
@@ -74,6 +77,7 @@ class InformasiController extends Controller
         $informasi = Information::find($id);
         $informasi->update([
             'user_id'   => Auth::user()->id,
+            'kategori_id'  => $request->kategori_id ?? $informasi->kategori_id,
             'judul' => $request->judul,
             'konten'    => $request->konten,
             'img'   => $imgName ?? $informasi->img

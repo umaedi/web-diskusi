@@ -44,6 +44,14 @@
                                 <label for="judul">Judul</label>
                                 <input type="text" name="judul" class="form-control" value="{{ $informasi->judul }}">
                             </div>
+                            <div class="form-group">
+                                <label for="judul">Kategori</label>
+                                @foreach ($kategori as $item)
+                                <select name="nama_kategori" class="form-control">
+                                    <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                </select>
+                                @endforeach
+                            </div>
                             <div class="form-group mt-3">
                                 <input id="x" type="hidden" name="konten">
                                 <trix-editor input="x">{!! $informasi->konten !!}</trix-editor>
