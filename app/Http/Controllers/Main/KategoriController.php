@@ -41,7 +41,7 @@ class KategoriController extends Controller
         $data['title']   = "Detail kategori";
         $data['kategori'] = Kategori::find($id);
         $data['informasi'] = Information::where('id',$id)->get();
-        $data['diskusi'] = Diskusi::where('id',$id)->get();
+        $data['diskusi'] = Diskusi::where('id_kategori',$id)->get();
         return view('main.kategori.show', $data);
     }
 
