@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kategori;
 use App\Models\Comment;
 use App\Models\Diskusi;
 use App\Models\Forum;
@@ -13,7 +14,8 @@ class DiskusiController extends Controller
     {
         $title = "Topik diskusi";
         $comments = Comment::where('topic_id', 1)->get();
-        return view('diskusi.index', compact('title', 'comments'));
+        $kategori = Kategori::all();
+        return view('diskusi.index', compact('title', 'comments', 'kategori'));
     }
 
     public function edit($id)
@@ -25,6 +27,7 @@ class DiskusiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_kategori'   => 'required',
             'nama_universitas' => 'required|string|max:255',
             'nim'   => 'required|string|max:20',
             'nama_mahasiswa'    => 'required|string|max:100',

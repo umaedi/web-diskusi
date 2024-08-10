@@ -44,13 +44,14 @@
                                 <label for="judul">Judul</label>
                                 <input type="text" name="judul" class="form-control" value="{{ $informasi->judul }}">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="judul">Kategori</label>
-                                @foreach ($kategori as $item)
                                 <select name="nama_kategori" class="form-control">
+                                    <option value="{{ $informasi->->id }}">{{ $informasi->nama_kategori }}</option>
+                                    @foreach ($kategori as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                    @endforeach
                                 </select>
-                                @endforeach
                             </div>
                             <div class="form-group mt-3">
                                 <input id="x" type="hidden" name="konten">

@@ -9,6 +9,7 @@ Route::middleware('guest')->group(function() {
     Route::post('/login', [Auth\LoginController::class, 'login']);
 });
 
+Route::get('/cari', CariController::class);
 //route untuk halaman home
 Route::get('/', HomeController::class);
 
@@ -83,6 +84,10 @@ Route::middleware('auth')->prefix('admin')->group(function() {
         Route::post('/kategori/update/{id}', 'update');
         Route::get('/kategori/delete/{id}', 'delete');
     });
+
+    Route::get('/statistik', [Main\StatistikController::class, 'index']);
+    Route::get('/statistik/print', [Main\StatistikController::class, 'print']);
+    
     //route for diskusi
     // Route::controller(Main\TopikController::class)->group(function() {
     //     Route::get('/topik', 'index')->name('main.topik');

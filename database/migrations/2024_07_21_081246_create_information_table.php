@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('konten');
             $table->string('img')->default('informasi/informasi.jpg');
+            $table->string('view')->default(0);
             $table->timestamps();
         });
     }

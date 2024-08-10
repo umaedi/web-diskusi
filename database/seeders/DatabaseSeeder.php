@@ -47,9 +47,9 @@ class DatabaseSeeder extends Seeder
         }
 
         $topik = [
-            ['id_forum' => rand(100000, 999999), 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com'],
-            ['id_forum' => rand(100000, 999999), 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com'],
-            ['id_forum' => rand(100000, 999999), 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com']
+            ['id_forum' => rand(100000, 999999), 'id_kategori' => '1', 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com'],
+            ['id_forum' => rand(100000, 999999), 'id_kategori' => '2', 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com'],
+            ['id_forum' => rand(100000, 999999), 'id_kategori' => '1', 'judul'  => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text', 'nama_universitas'  => 'UNIVERSITAS A', 'nim'  => '1741020248', 'nama_mahasiswa'  => 'Mega', 'email'  => 'mega@mail.com']
         ];
 
         foreach ($topik as $value) {

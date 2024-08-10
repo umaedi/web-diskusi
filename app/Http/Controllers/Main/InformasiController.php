@@ -50,7 +50,7 @@ class InformasiController extends Controller
     public function show($id)
     {
         $data['title'] = 'Detail informasi';
-        $data['informasi'] = Information::find($id);
+        $informasi = Information::find($id);
         $data['comments'] = Comment::where('informasi_id', $id)->get();
         return view('main.informasi.show', $data);
     }

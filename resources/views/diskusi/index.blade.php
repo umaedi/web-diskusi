@@ -34,6 +34,19 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group mb-3">
+                            <label for="nama_universitas">Kategori topik diskusi</label>
+                            <select name="id_kategori" class="form-control">
+                                @foreach ($kategori as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                @endforeach
+                            </select>
+                            @error('nama_universitas')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-3">
                             <label for="nama_universitas">Nama Universitas</label>
                             <input type="text" class="form-control @error('nama_universitas') is-invalid @enderror" id="nama_universitas" name="nama_universitas" value="{{ old('nama_universitas') }}">
                             @error('nama_universitas')

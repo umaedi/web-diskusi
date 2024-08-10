@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('diskusis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_kategori');
             $table->string('id_forum');
             $table->string('judul');
             $table->text('konten');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->string('nama_mahasiswa');
             $table->string('email');
             $table->string('img')->default('forum/forum.jpg');
+            $table->string('view')->default('0');
             $table->timestamps();
         });
     }

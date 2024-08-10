@@ -9,6 +9,7 @@ class Diskusi extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id_kategori',
         'id_forum',
         'judul',
         'konten',
@@ -16,6 +17,12 @@ class Diskusi extends Model
         'nim',
         'nama_mahasiswa',
         'email',
-        'img'
+        'img',
+        'view'
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+    }
 }

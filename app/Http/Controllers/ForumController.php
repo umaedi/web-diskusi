@@ -9,10 +9,11 @@ class ForumController extends Controller
 {
     public function index($id)
     {
-        $data['title'] = "Forum diskusi";
-        $data['komentar'] = Forum::where('diskusi_id', $id)->get();
-        $data['forum'] = Diskusi::find($id);
-        return view('forum.index', $data);
+        $title = "Forum diskusi";
+        $komentar = Forum::where('diskusi_id', $id)->get();
+        $forum = Diskusi::find($id);
+        $forum->increment('view');
+        return view('forum.index', compact('title', 'komentar', 'forum'));
     }
 
     public function store(Request $request)

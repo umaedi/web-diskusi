@@ -44,13 +44,19 @@
           </a>
       </li>
       @if (auth()->user()->role == 'admin')
-      {{-- <li class="menu-item {{ Request::is('admin/operator*') ? 'active' : ''}}">
+      <li class="menu-item {{ Request::is('admin/operator*') ? 'active' : ''}}">
           <a href="{{ route('main.operator') }}" class="menu-link">
             <i class="menu-icon bx bx-user"></i>
-            <div data-i18n="Basic">Operator</div>
+            <div data-i18n="Basic">Admin</div>
           </a>
-      </li> --}}
+      </li>
       @endif
+      <li class="menu-item  {{ Request::is('admin/statistik*') ? 'active' : ''}}">
+        <a href="/admin/statistik" class="menu-link">
+          <i class='menu-icon bx bx-stats'></i>
+          <div data-i18n="Basic">Statistik</div>
+        </a>
+      </li>
       <li class="menu-item">
         <a href="/admin/logout" class="menu-link">
           <i class='menu-icon bx bx-left-arrow-alt'></i>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Kategori;
+use App\Models\Information;
+use App\Models\Diskusi;
 class KategoriController extends Controller
 {
     public function index()
@@ -38,6 +40,8 @@ class KategoriController extends Controller
     {
         $data['title']   = "Detail kategori";
         $data['kategori'] = Kategori::find($id);
+        $data['informasi'] = Information::where('id',$id)->get();
+        $data['diskusi'] = Diskusi::where('id',$id)->get();
         return view('main.kategori.show', $data);
     }
 

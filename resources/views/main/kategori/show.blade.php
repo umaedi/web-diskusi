@@ -21,5 +21,70 @@
             </form>
         </div>
     </div>
+    {{-- <div class="card"> --}}
+        {{-- <div class="card-body"> --}}
+            <div class="row">
+                <div class="container">
+                 <div class="divider">
+                   <div class="divider-text">Informasi Penelitian dan Pendidikan</div>
+                 </div>
+                </div>
+                @forelse ($informasi as $item)
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $item->judul }}</h5>
+                      <p class="card-text">
+                       <div>{!! $item->konten !!}</div>
+                      </p>
+                      <form action="/admin/informasi/destroy/{{ $item->id }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <a href="/admin/informasi/show/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka informsi</a>
+                        <button type="submit" onclick="return confirm('Yakin hapus informasi ini?')" class="btn btn-outline-danger">Hapus</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                @empty
+                <div class="text-center">
+                  <i class='bx bx-data' style="font-size: 100px"></i>
+                  <p>Belum ada informasi</p>
+                </div>
+                @endforelse
+               </div>
+              <div class="row">
+                <div class="container">
+                 <div class="divider">
+                   <div class="divider-text">Topik Diskusi</div>
+                 </div>
+                </div>
+                @forelse ($diskusi as $item)
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $item->judul }}</h5>
+                      <p class="card-text">
+                       <div>{!! $item->konten !!}</div>
+                      </p>
+                      <form action="/admin/diskusi/destroy/{{ $item->id }}" method="POST">
+                      <a href="/admin/diskusi/show/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka diskusi</a>
+                        @csrf
+                        <button class="btn btn-outline-danger" onclick="return confirm('Yakin hapus topik ini?')">Hapus</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                @empty
+                <div class="text-center">
+                  <i class='bx bx-data' style="font-size: 100px"></i>
+                  <p>Belum ada topik diskusi</p>
+                </div>
+                @endforelse
+               </div>
+        {{-- </div> --}}
+    {{-- </div> --}}
 </div>
 @endsection

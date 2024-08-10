@@ -27,6 +27,10 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="form-group mb-3">
+                            <label for="kategori_topik">Kategori topik</label>
+                            <input type="text" class="form-control" id="kategori_topik" name="nama_universitas" value="{{ $forum->kategori->nama_kategori }}">
+                        </div>
+                        <div class="form-group mb-3">
                             <label for="nama_universitas">Nama Universitas</label>
                             <input type="text" class="form-control" id="nama_universitas" name="nama_universitas" value="{{ $forum->nama_universitas }}">
                             @error('nama_universitas')

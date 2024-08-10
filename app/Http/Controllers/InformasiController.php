@@ -11,6 +11,7 @@ class InformasiController extends Controller
     {
         $title = "Forum diskusi";
         $informasi = Information::find($id);
+        $informasi->increment('view');
         $comments = Comment::where('informasi_id', $id)->get();
         return view('informasi.index', compact('title', 'informasi', 'comments'));
     }

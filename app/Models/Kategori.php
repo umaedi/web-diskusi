@@ -17,4 +17,9 @@ class Kategori extends Model
     {
         return $this->hasMany(Information::class);
     }
+
+    public function diskusi()
+    {
+        return $this->hasMany(Diskusi::class);
+    }
 }
