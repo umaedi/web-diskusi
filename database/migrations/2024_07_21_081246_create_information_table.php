@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('kategori_id');
             $table->string('judul');
+            $table->text('deskripsi');
             $table->text('konten');
             $table->string('img')->default('informasi/informasi.jpg');
             $table->string('view')->default(0);

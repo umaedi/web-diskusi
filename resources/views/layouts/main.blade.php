@@ -17,7 +17,7 @@
     <title>{{ $title ?? config('app.name') }}</title>
 
     <meta name="description" content="" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
 
@@ -39,13 +39,12 @@
 
     @stack('css')
     <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="{{ asset('main') }}/vendor/js/helpers.js"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{ asset('main') }}/js/config.js"></script>
+    <style>
+      .attachment.attachment--preview img {
+          max-width: 100%;
+          height: auto;
+      }
+    </style>
   </head>
 
   <body>

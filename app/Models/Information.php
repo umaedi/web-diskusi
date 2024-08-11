@@ -12,6 +12,7 @@ class Information extends Model
         'user_id',
         'kategori_id',
         'judul',
+        'deskripsi',
         'konten',
         'img'
     ];

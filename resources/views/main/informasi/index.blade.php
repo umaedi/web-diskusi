@@ -13,7 +13,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ $item->judul }}</h5>
             <p class="card-text">
-             <div>{!! $item->konten !!}</div>
+             {{ $item->deskripsi }}
             </p>
             <a href="/admin/informasi/show/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka informasi</a>
           </div>

@@ -37,6 +37,12 @@
     <link rel="stylesheet" href="{{ asset('vendor') }}/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('css') }}/demo.css" />
     @stack('css')
+    <style>
+      .attachment.attachment--preview img {
+          max-width: 100%;
+          height: auto;
+      }
+    </style>
   </head>
 
   <body>

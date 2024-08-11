@@ -27,6 +27,7 @@ class InformasiController extends Controller
     {
         $request->validate([
             'judul' => 'required|max:255',
+            'deskripsi' => 'required',
             'konten'    => 'required',
         ]);
 
@@ -40,6 +41,7 @@ class InformasiController extends Controller
             'user_id'   => Auth::user()->id,
             'kategori_id'  => $request->kategori_id,
             'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
             'konten'    => $request->konten,
             'img'   => $imgName
         ]);
@@ -67,6 +69,7 @@ class InformasiController extends Controller
     {
         $request->validate([
             'judul' => 'required|max:255',
+            'deskripsi' => 'required',
             'konten'    => 'required',
         ]);
 
@@ -79,6 +82,7 @@ class InformasiController extends Controller
             'user_id'   => Auth::user()->id,
             'kategori_id'  => $request->kategori_id ?? $informasi->kategori_id,
             'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
             'konten'    => $request->konten,
             'img'   => $imgName ?? $informasi->img
         ]);

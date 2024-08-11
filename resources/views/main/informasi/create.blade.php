@@ -43,7 +43,11 @@
                                 <label for="judul">Judul</label>
                                 <input type="text" name="judul" class="form-control">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
+                                <label for="deskripsi">Deskripsi</label>
+                                <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group mt-3">
                                 <label for="judul">Kategori</label>
                                 <select name="kategori_id" class="form-control">
                                     @foreach ($kategori as $item)
@@ -64,3 +68,36 @@
     </div>
 </div>
 @endsection
+@push('js')
+<script>
+    document.addEventListener("trix-attachment-add", function(event) {
+        if (event.attachment.file) {
+            uploadFileAttachment(event.attachment);
+        }
+    });
+
+    function uploadFileAttachment(attachment) {
+        const file = attachment.file;
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('{{ route('trix.upload') }}', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            attachment.setAttributes({
+                url: data.url,
+                href: data.url
+            });
+        })
+        .catch(error => {
+            console.error('Error uploading file:', error);
+        });
+    }
+</script>
+@endpush

@@ -37,9 +37,9 @@ class DatabaseSeeder extends Seeder
         }
 
         $information = [
-            ['user_id' => '1', 'kategori_id' => '1', 'judul' => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text'],
-            ['user_id' => '1', 'kategori_id' => '2', 'judul' => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text'],
-            ['user_id' => '1', 'kategori_id' => '1', 'judul' => 'What is Lorem Ipsum', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text']
+            ['user_id' => '1', 'kategori_id' => '1', 'judul' => 'What is Lorem Ipsum', 'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text'],
+            ['user_id' => '1', 'kategori_id' => '2', 'judul' => 'What is Lorem Ipsum', 'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text'],
+            ['user_id' => '1', 'kategori_id' => '1', 'judul' => 'What is Lorem Ipsum', 'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'konten'  => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text']
         ];
 
         foreach ($information as $value) {

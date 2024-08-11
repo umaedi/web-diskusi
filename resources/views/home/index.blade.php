@@ -35,7 +35,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ $item->judul }}</h5>
           <div class="card-text mb-3">
-            {!! $item->konten !!}
+            {{ $item->deskripsi }}
           </div>
           <a href="/informasi/{{ $item->id }}" class="btn btn-outline-primary"><i class='bx bx-folder-open'></i> Buka informasi</a>
           <a href="//api.whatsapp.com/send?phone=&amp;text={{ $item->judul }}%20%2D%20{{ url('informasi/'.$item->id) }}" target="_blank" class="btn btn-outline-primary"><i class='bx bxl-whatsapp'></i> Bagikan</a>

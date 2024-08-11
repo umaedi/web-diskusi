@@ -54,7 +54,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ $item->judul }}</h5>
             <p class="card-text">
-             <div>{!! $item->konten !!}</div>
+              {!! $item->deskripsi !!}
             </p>
             <form action="/admin/informasi/destroy/{{ $item->id }}" method="POST">
               @method('DELETE')

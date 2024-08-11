@@ -95,6 +95,8 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     //     Route::post('/topik/store', 'store')->name('main.topik.create');
     // });
     Route::get('/cari', CariController::class);
+
+    Route::post('/upload', [Main\TrixUploadController::class, 'upload'])->name('trix.upload');
 });
 
 Route::get('/migrate', function() {
