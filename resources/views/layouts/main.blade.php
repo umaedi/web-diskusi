@@ -80,8 +80,8 @@
                     <input name="q"
                       type="text"
                       class="form-control border-0 shadow-none"
-                      placeholder="Cari informasi dan topik..."
-                      aria-label="Cari informasi dan topik..."
+                      placeholder="Cari informasi dan diskusi..."
+                      aria-label="Cari informasi dan diskusi..."
                     />
                   </div>
                 </div>
