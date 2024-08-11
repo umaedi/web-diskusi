@@ -16,6 +16,6 @@ class CariController extends Controller
         $data['title'] = "Cari informasi dan diskusi";
         $data['informasi'] = Information::where('judul', 'like', '%' . $request->q . '%')->get();
         $data['diskusi'] = Diskusi::where('judul', 'like', '%' . $request->q . '%')->get();
-        return view('home.index', $data);
+        return view('main.pencarian.index', $data);
     }
 }

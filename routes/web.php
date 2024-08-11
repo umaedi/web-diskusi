@@ -94,6 +94,7 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     //     Route::get('/topik/create', 'create')->name('main.topik.create');
     //     Route::post('/topik/store', 'store')->name('main.topik.create');
     // });
+    Route::get('/cari', CariController::class);
 });
 
 Route::get('/migrate', function() {
