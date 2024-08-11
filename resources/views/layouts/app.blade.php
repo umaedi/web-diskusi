@@ -17,7 +17,7 @@
     <title>{{ $title ?? "Forum Diskusi" }}</title>
 
     <meta name="description" content="" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
 
@@ -120,5 +120,6 @@
     <script src="{{ asset('vendor') }}/libs/jquery/jquery.js"></script>
     <script src="{{ asset('vendor') }}/libs/popper/popper.js"></script>
     <script src="{{ asset('vendor') }}/js/bootstrap.js"></script>
+    @stack('js')
   </body>
 </html>

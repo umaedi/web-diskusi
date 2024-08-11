@@ -33,7 +33,7 @@ class DiskusiController extends Controller
             'nama_mahasiswa'    => 'required|string|max:100',
             'email' => 'required|string|max:100',
             'judul' => 'required|string|max:255',
-            'konten' => 'required|string|max:255',
+            'konten' => 'required',
             'img'   => 'file|mimes:jpg,jpeg,png|max:2048'
         ]);
         

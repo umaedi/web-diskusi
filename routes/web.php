@@ -33,7 +33,7 @@ Route::controller(ForumController::class)->group(function() {
     Route::get('/forum-diskusi/{id}', 'index');
     Route::post('/forum-diskusi/store', 'store');
 });
-
+Route::post('/upload', [Main\TrixUploadController::class, 'upload'])->name('user.trix.upload');
 //route for admin or operator
 Route::middleware('auth')->prefix('admin')->group(function() {
     Route::get('/dashboard', Main\DashboardController::class);

@@ -109,3 +109,36 @@
     </form>
 </div>
 @endsection
+@push('js')
+<script>
+    document.addEventListener("trix-attachment-add", function(event) {
+        if (event.attachment.file) {
+            uploadFileAttachment(event.attachment);
+        }
+    });
+
+    function uploadFileAttachment(attachment) {
+        const file = attachment.file;
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('{{ route('user.trix.upload') }}', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            attachment.setAttributes({
+                url: data.url,
+                href: data.url
+            });
+        })
+        .catch(error => {
+            console.error('Error uploading file:', error);
+        });
+    }
+</script>
+@endpush
