@@ -13,9 +13,8 @@ class DiskusiController extends Controller
     public function index()
     {
         $title = "Topik diskusi";
-        $comments = Comment::where('topic_id', 1)->get();
         $kategori = Kategori::all();
-        return view('diskusi.index', compact('title', 'comments', 'kategori'));
+        return view('diskusi.index', compact('title', 'kategori'));
     }
 
     public function edit($id)

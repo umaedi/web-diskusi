@@ -49,7 +49,7 @@
     </div>
      @endforelse
     </div>
-    <div class="row">
+    {{-- <div class="row">
       <div class="container">
         <div class="divider">
           <div class="divider-text">Topik Diskusi</div>
@@ -79,9 +79,9 @@
       </div>
       @endforelse
       <!--/ Order Statistics -->
-    </div>
-    <div class="col-md-12 text-center">
+    </div> --}}
+    {{-- <div class="col-md-12 text-center">
       <a href="{{ route('posting-diskusi') }}" class="btn btn-primary"><i class='bx bx-message-dots'></i> Posting diskusi</a>
-    </div>
+    </div> --}}
   </div>
 @endsection

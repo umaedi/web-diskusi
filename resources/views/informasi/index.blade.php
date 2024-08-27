@@ -11,19 +11,6 @@
                 <div>{!! $informasi->konten !!}</div>
             </div>
         </div>
-        <h5 class="fw-bold"><i class='bx bxs-chat'></i> Forum diskusi</h5> 
-        <div class="card">
-            <div class="card-body">
-                @forelse ($comments as $comment)
-                <label class="mb-1" for="">{{ $comment->nama_mahasiswa }} <i class='bx bx-badge-check'></i></label>
-                <div class="forum">
-                    {{ $comment->komentar }}
-                </div>
-                @empty
-                    <p class="text-center"><i class='bx bx-data' style="font-size: 100px"></i> <br> Belum ada diskusi</p>
-                @endforelse
-            </div>
-        </div>
       </div>
       <div class="col-lg-6 mb-4 order-0">
         <h5 class="fw-bold"><i class='bx bxs-chat'></i> Posting diskusi</h5>
@@ -91,6 +78,19 @@
                     <button class="btn btn-primary" type="submit"><i class='bx bx-paper-plane'></i> Posting</button>
                 </div>
             </form>
+        </div>
+        <h5 class="fw-bold mt-3"><i class='bx bxs-chat'></i> Forum diskusi</h5> 
+        <div class="card">
+            <div class="card-body">
+                @forelse ($comments as $comment)
+                <label class="mb-1" for="">{{ $comment->nama_mahasiswa }} <i class='bx bx-badge-check'></i></label>
+                <div class="forum">
+                    {{ $comment->komentar }}
+                </div>
+                @empty
+                    <p class="text-center"><i class='bx bx-data' style="font-size: 100px"></i> <br> Belum ada diskusi</p>
+                @endforelse
+            </div>
         </div>
       </div>
     </div>

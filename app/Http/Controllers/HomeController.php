@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         $data['title'] = "Forum diskusi";
         $data['informasi'] = Information::all();
-        $data['diskusi'] = Diskusi::all();
+        // $data['diskusi'] = Diskusi::all();
         return view('home.index', $data);
     }
 }

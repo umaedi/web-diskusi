@@ -37,12 +37,12 @@
             <div data-i18n="Basic">Kategori</div>
           </a>
       </li>
-      <li class="menu-item {{ Request::is('admin/diskusi*') ? 'active' : ''}}">
+      {{-- <li class="menu-item {{ Request::is('admin/diskusi*') ? 'active' : ''}}">
           <a href="{{ route('main.diskusi') }}" class="menu-link">
             <i class='menu-icon bx bxs-chat'></i>
             <div data-i18n="Basic">Forum diskusi</div>
           </a>
-      </li>
+      </li> --}}
       @if (auth()->user()->role == 'admin')
       <li class="menu-item {{ Request::is('admin/operator*') ? 'active' : ''}}">
           <a href="{{ route('main.operator') }}" class="menu-link">

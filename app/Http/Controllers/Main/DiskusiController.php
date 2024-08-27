@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Diskusi;
 use App\Models\Forum;
-
+use App\Models\Comment;
 class DiskusiController extends Controller
 {
     public function index()
@@ -29,5 +29,12 @@ class DiskusiController extends Controller
         $diskusi = Diskusi::find($id);
         $diskusi->delete($id);
         return back()->with('success', 'Topik diskusi berhasil dihapus!');
+    }
+
+    public function delkomentar($id)
+    {
+        $diskusi = Comment::find($id);
+        $diskusi->delete($id);
+        return back()->with('success', 'Komentar diskusi berhasil dihapus!');
     }
 }

@@ -72,7 +72,7 @@
       </div>
       @endforelse
      </div>
-    <div class="row">
+    {{-- <div class="row">
       <div class="container">
        <div class="divider">
          <div class="divider-text">Topik Diskusi</div>
@@ -101,6 +101,6 @@
         <p>Belum ada topik diskusi</p>
       </div>
       @endforelse
-     </div>
+     </div> --}}
   </div>
 @endsection

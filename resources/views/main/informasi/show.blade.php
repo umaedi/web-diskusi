@@ -12,19 +12,6 @@
             </div>
         </div>
         <a href="/admin/informasi/edit/{{ $informasi->id }}" class="btn btn-warning mb-3">Edit informasi</a>
-        <h5 class="fw-bold"><i class='bx bxs-chat'></i> Komentar</h5>
-        <div class="card">
-            <div class="card-body">
-                @forelse ($comments as $comment)
-                <label class="mb-1" for="">{{ $comment->nama_mahasiswa }} <i class='bx bx-badge-check'></i></label>
-                <div class="forum">
-                    {{ $comment->komentar }}
-                </div>
-                @empty
-                    <p class="text-center"><i class='bx bx-data' style="font-size: 100px"></i> <br> Belum ada diskusi</p>
-                @endforelse
-            </div>
-        </div>
       </div>
       <div class="col-lg-6 mb-4 order-0">
         <h5 class="fw-bold"><i class='bx bxs-chat'></i> Posting komentar</h5>
@@ -59,6 +46,20 @@
                     <button class="btn btn-primary" type="submit"><i class='bx bx-paper-plane'></i> Posting</button>
                 </div>
             </form>
+        </div>
+        <h5 class="fw-bold mt-3"><i class='bx bxs-chat'></i> Komentar</h5>
+        <div class="card">
+            <div class="card-body">
+                @forelse ($comments as $comment)
+                <label for="">{{ $comment->nama_mahasiswa }} <i class='bx bx-badge-check'></i></label>
+                <a onclick="return confirm('Yakin hapus?')" href="/admin/diskusi/delete/{{ $comment->id }}" class="btn btn-danger btn-sm mb-1"><i class='bx bxs-trash'></i></a>
+                <div class="forum">
+                    {{ $comment->komentar }}
+                </div>
+                @empty
+                    <p class="text-center"><i class='bx bx-data' style="font-size: 100px"></i> <br> Belum ada diskusi</p>
+                @endforelse
+            </div>
         </div>
       </div>
     </div>

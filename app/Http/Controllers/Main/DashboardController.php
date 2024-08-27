@@ -15,7 +15,7 @@ class DashboardController extends Controller
     {
         $data['title'] = "Dahsboard Forum Diskusi";
         $data['informasi'] = Information::all();
-        $data['diskusi'] = Diskusi::all();
+        // $data['diskusi'] = Diskusi::all();
         return view('main.dashboard.index', $data);
     }
 }

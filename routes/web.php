@@ -56,6 +56,7 @@ Route::middleware('auth')->prefix('admin')->group(function() {
         Route::get('/diskusi', 'index')->name('main.diskusi');
         Route::get('/diskusi/show/{id}', 'show')->name('main.diskusi.show');
         Route::post('/diskusi/destroy/{id}', 'destroy');
+        Route::get('/diskusi/delete/{id}', 'delkomentar');
     });
 
     //route for forum diskusi
